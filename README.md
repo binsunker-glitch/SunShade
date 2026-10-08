@@ -1,5 +1,7 @@
 # ظل سيارتي — متجر شمسيات السيارات (نموذج تجريبي)
 
+**الموقع المنشور:** https://binsunker-glitch.github.io/SunShade/
+
 متجر عربي RTL كامل: React + TypeScript + Tailwind CSS v4 + Lucide.
 
 ## التشغيل
