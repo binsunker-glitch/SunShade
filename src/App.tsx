@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { HashRouter, Route, Routes, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { StoreProvider } from "./store/store";
 import { BottomNav, Footer, Header, TopBar, TrustBar, WhatsFloat } from "./components/chrome";
@@ -13,9 +13,9 @@ function ScrollTop() {
 export default function App() {
   return (
     <StoreProvider>
-      <BrowserRouter>
+      <HashRouter>
         <ScrollTop />
-        <a href="#main" className="sr-only">تخطَّ إلى المحتوى</a>
+        <a href="#main" className="sr-only">╪ز╪«╪╖┘┘ّ ╪ح┘┘ë ╪د┘┘à╪ص╪ز┘ê┘ë</a>
         <TopBar />
         <Header />
         <main id="main" className="min-h-[60vh] pb-20 md:pb-0">
@@ -41,7 +41,7 @@ export default function App() {
         <Footer />
         <BottomNav />
         <WhatsFloat />
-      </BrowserRouter>
+      </HashRouter>
     </StoreProvider>
   );
 }
