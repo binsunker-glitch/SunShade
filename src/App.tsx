@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { StoreProvider } from "./store/store";
 import { BottomNav, Footer, Header, TopBar, TrustBar, WhatsFloat } from "./components/chrome";
 import PwaUI from "./components/pwa";
-import { BrandPage, CartPage, CheckoutPage, FinderPage, GalleryPage, Home, InfoPages, ProductPage, ReviewsPage, Shop, VehiclePage } from "./pages/pages";
+import { BrandPage, CarsPage, CartPage, CheckoutPage, FinderPage, GalleryPage, Home, InfoPages, ProductPage, ReviewsPage, Shop, VehiclePage } from "./pages/pages";
 
 function ScrollTop() {
   const { pathname } = useLocation();
@@ -29,6 +29,7 @@ export default function App() {
             <Route path="/cart" element={<CartPage />} />
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/reviews" element={<ReviewsPage />} />
+            <Route path="/cars" element={<CarsPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/faq" element={<InfoPages page="faq" />} />
             <Route path="/shipping" element={<InfoPages page="shipping" />} />

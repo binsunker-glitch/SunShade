@@ -439,6 +439,58 @@ export function GalleryPage() {
   );
 }
 
+export function CarsPage() {
+  const cars: [string, string, string, string][] = [
+    ["تويوتا", "لاند كروزر", "SUV", "دفع رباعي فاخر"],
+    ["تويوتا", "كامري", "سيدان", "عائلية"],
+    ["لكزس", "LX", "SUV", "فاخرة"],
+    ["مرسيدس-بنز", "E-Class", "سيدان", "فاخرة"],
+    ["بي إم دبليو", "الفئة الخامسة", "سيدان", "فاخرة"],
+    ["هيونداي", "سوناتا", "سيدان", "عائلية"],
+    ["نيسان", "باترول", "SUV", "دفع رباعي"],
+    ["فورد", "إكسبلورر", "SUV", "عائلية"],
+    ["جي إم سي", "يوكن", "SUV", "كبيرة"],
+    ["تويوتا", "هايلكس", "بيك أب", "عملية"],
+  ];
+  return (
+    <div className="container-x max-w-4xl py-8">
+      <Breadcrumbs items={[["قائمة السيارات"]]} />
+      <h1 className="mt-2 text-2xl font-bold md:text-3xl">ظل سيارتي</h1>
+      <p className="font-bold text-accent">قائمة السيارات وأنواعها</p>
+      <p className="mt-1 text-[14px] text-muted-foreground">عشر سيارات شائعة في السوق السعودي مرتبة حسب الماركة والموديل ونوع الهيكل.</p>
+      <div className="mt-5 overflow-hidden rounded-2xl border border-border bg-card card-shadow">
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[560px] text-[14px]">
+            <thead>
+              <tr className="bg-primary text-white">
+                <th className="px-4 py-3 font-bold">#</th>
+                <th className="px-4 py-3 font-bold">الماركة</th>
+                <th className="px-4 py-3 font-bold">الموديل</th>
+                <th className="px-4 py-3 font-bold">نوع الهيكل</th>
+                <th className="px-4 py-3 font-bold">الفئة</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cars.map(([brand, model, body, cls], i) => (
+                <tr key={i} className={`border-t border-border ${i % 2 === 1 ? "bg-muted/50" : ""}`}>
+                  <td className="px-4 py-3 text-center font-bold">{i + 1}</td>
+                  <td className="px-4 py-3 text-center font-bold">{brand}</td>
+                  <td className="px-4 py-3 text-center">{model}</td>
+                  <td className="px-4 py-3 text-center">{body}</td>
+                  <td className="px-4 py-3 text-center text-muted-foreground">{cls}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p className="mt-3 text-[13px] text-muted-foreground">ملاحظة: قائمة تعريفية عامة، ويُنصح بتحديد سنة الصنع بدقة عند اختيار مقاس الشمسية.</p>
+      <Link to="/finder" className="mt-4 inline-block rounded-lg bg-primary px-6 py-3 font-bold text-white">اختر سيارتك لعرض الشمسية المناسبة ←</Link>
+      <script type="application/ld+json">{JSON.stringify({ "@context": "https://schema.org", "@type": "ItemList", name: "قائمة السيارات وأنواعها — ظل سيارتي", itemListElement: cars.map(([brand, model], i) => ({ "@type": "ListItem", position: i + 1, name: `${brand} ${model}` })) })}</script>
+    </div>
+  );
+}
+
 export function InfoPages({ page }: { page: string }) {
   if (page === "faq") return <div className="container-x max-w-3xl py-8"><Breadcrumbs items={[["الأسئلة الشائعة"]]} /><h1 className="mt-2 text-2xl font-bold">الأسئلة الشائعة</h1><div className="mt-4"><FaqList /></div><script type="application/ld+json">{JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) })}</script></div>;
   if (page === "shipping") return (

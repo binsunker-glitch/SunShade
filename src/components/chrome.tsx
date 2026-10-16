@@ -70,7 +70,7 @@ export function Header() {
 
       <nav className="hidden border-t border-border md:block" aria-label="التنقل الرئيسي">
         <div className="container-x flex items-center gap-1 py-1 text-[14px] font-medium">
-          {[["/", "الرئيسية"], ["/finder", "اختر سيارتك"], ["/shop", "السيارات"], ["/shop?sort=best", "الأكثر مبيعًا"], ["/shop?filter=deals", "العروض"], ["/reviews", "التقييمات"], ["/about", "من نحن"]].map(([to, l]) => (
+          {[["/", "الرئيسية"], ["/finder", "اختر سيارتك"], ["/shop", "السيارات"], ["/shop?sort=best", "الأكثر مبيعًا"], ["/shop?filter=deals", "العروض"], ["/reviews", "التقييمات"], ["/cars", "قائمة السيارات"], ["/about", "من نحن"]].map(([to, l]) => (
             <Link key={l} to={to} className="rounded-md px-3 py-2 hover:bg-muted hover:text-primary">{l}</Link>
           ))}
         </div>
@@ -79,7 +79,7 @@ export function Header() {
       {open && (
         <nav className="border-t border-border bg-card px-4 py-3 text-[15px] md:hidden" aria-label="قائمة الجوال">
           <div className="grid gap-1">
-            {[["/", "الرئيسية"], ["/finder", "اختر سيارتك"], ["/shop", "السيارات"], ["/shop?sort=best", "الأكثر مبيعًا"], ["/shop?filter=deals", "العروض"], ["/reviews", "التقييمات"], ["/gallery", "صور العملاء"], ["/faq", "الأسئلة الشائعة"], ["/shipping", "الشحن والاسترجاع"], ["/wishlist", "المفضلة"], ["/account", "حسابي"], ["/about", "من نحن"]].map(([to, l]) => (
+            {[["/", "الرئيسية"], ["/finder", "اختر سيارتك"], ["/shop", "السيارات"], ["/shop?sort=best", "الأكثر مبيعًا"], ["/shop?filter=deals", "العروض"], ["/reviews", "التقييمات"], ["/cars", "قائمة السيارات"], ["/gallery", "صور العملاء"], ["/faq", "الأسئلة الشائعة"], ["/shipping", "الشحن والاسترجاع"], ["/wishlist", "المفضلة"], ["/account", "حسابي"], ["/about", "من نحن"]].map(([to, l]) => (
               <Link key={l} to={to} onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 hover:bg-muted">{l}</Link>
             ))}
           </div>
@@ -152,7 +152,7 @@ export function Footer() {
           <b className="text-lg text-white">ظل سيارتي</b>
           <p className="mt-2 text-[13.5px] leading-7">شمسيات Premium بمقاس الزجاج لكل موديل. المملكة العربية السعودية. جميع البيانات والأسعار والتقييمات تجريبية للعرض.</p>
         </div>
-        <div><b className="text-white">روابط سريعة</b><ul className="mt-3 space-y-2 text-[13.5px]">{[["/", "الرئيسية"], ["/finder", "اختر سيارتك"], ["/shop?sort=best", "الأكثر مبيعًا"], ["/reviews", "التقييمات"], ["/gallery", "صور العملاء"], ["/about", "من نحن"]].map(([t, l]) => <li key={l}><Link className="hover:text-white" to={t}>{l}</Link></li>)}</ul></div>
+        <div><b className="text-white">روابط سريعة</b><ul className="mt-3 space-y-2 text-[13.5px]">{[["/", "الرئيسية"], ["/finder", "اختر سيارتك"], ["/shop?sort=best", "الأكثر مبيعًا"], ["/reviews", "التقييمات"], ["/gallery", "صور العملاء"], ["/cars", "قائمة السيارات"], ["/about", "من نحن"]].map(([t, l]) => <li key={l}><Link className="hover:text-white" to={t}>{l}</Link></li>)}</ul></div>
         <div><b className="text-white">السيارات</b><ul className="mt-3 space-y-2 text-[13.5px]">{brands.slice(0, 6).map((b) => <li key={b.slug}><Link className="hover:text-white" to={`/brand/${b.slug}`}>{b.nameAr} · {b.name}</Link></li>)}</ul></div>
         <div><b className="text-white">خدمة العملاء</b><ul className="mt-3 space-y-2 text-[13.5px]">{[["/faq", "الأسئلة الشائعة"], ["/shipping", "الشحن والاسترجاع"], ["/cart", "السلة"], ["/checkout", "إتمام الطلب"]].map(([t, l]) => <li key={l}><Link className="hover:text-white" to={t}>{l}</Link></li>)}</ul></div>
         <div><b className="text-white">تواصل معنا</b><ul className="mt-3 space-y-2 text-[13.5px]"><li>واتساب: ‎+966 50 000 0000</li><li>البريد: care@example.sa</li><li>الرياض، المملكة العربية السعودية</li><li className="flex gap-2 pt-1">{["X", "Instagram", "TikTok", "YouTube"].map((s) => <span key={s} className="rounded-md bg-white/10 px-2.5 py-1 text-[12px]">{s}</span>)}</li></ul></div>
