@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://binsunker-glitch.github.io/SunShade/sitemap.xml

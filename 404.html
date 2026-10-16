@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0F1F2E" />
+  <title>ظل سيارتي</title>
+  <script>
+    // GitHub Pages SPA fallback: حوّل أي مسار غير موجود إلى مسار داخلي (HashRouter)
+    (function () {
+      var base = '/SunShade/';
+      var path = location.pathname;
+      var rest = path.indexOf(base) === 0 ? path.slice(base.length) : '';
+      var hash = '#/' + rest.replace(/^\/+/, '') + location.search;
+      location.replace(base + hash);
+    })();
+  </script>
+</head>
+<body></body>
+</html>
