@@ -1,3 +1,6 @@
+@import "@fontsource/ibm-plex-sans-arabic/400.css";
+@import "@fontsource/ibm-plex-sans-arabic/600.css";
+@import "@fontsource/ibm-plex-sans-arabic/700.css";
 @import "tailwindcss";
 
 @theme {
@@ -31,6 +34,13 @@
   --primary: #0F1F2E;
   --primary-foreground: #FFFFFF;
   --accent: #C8A96A;
+}
+
+/* safe-area لآيفون (الشق والحافة السفلية) مع viewport-fit=cover */
+body {
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
 }
 
 html { scroll-behavior: smooth; }

@@ -2,6 +2,7 @@ import { HashRouter, Route, Routes, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { StoreProvider } from "./store/store";
 import { BottomNav, Footer, Header, TopBar, TrustBar, WhatsFloat } from "./components/chrome";
+import PwaUI from "./components/pwa";
 import { BrandPage, CartPage, CheckoutPage, FinderPage, GalleryPage, Home, InfoPages, ProductPage, ReviewsPage, Shop, VehiclePage } from "./pages/pages";
 
 function ScrollTop() {
@@ -41,6 +42,7 @@ export default function App() {
         <Footer />
         <BottomNav />
         <WhatsFloat />
+        <PwaUI />
       </HashRouter>
     </StoreProvider>
   );
